@@ -4,7 +4,6 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
-set fo-=r fo -=o "Removes a comment format carrying on to next line 
 
 
 "Install Plugins
@@ -21,7 +20,15 @@ Plug 'scrooloose/nerdtree'
 call plug#end() 
 
 "CUSTOM CONFIGS
+let mapleader = ','
 set relativenumber
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>wq :wq<cr>
+nnoremap <leader>q! :q<cr>
+nnoremap <leader>w :w<cr>
+
+" shift h and l are already in newovim configurations
 
 "Manipulate blank lines while remaining in Normal mode
 nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>

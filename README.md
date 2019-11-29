@@ -29,6 +29,11 @@
 
 - :noh Remove last search highlighting
 
+## What you must learn?
+[] Using regex with search 
+[] Automatic opening of windows
+[] Using terminals
+
 ## Plugin Vim
 
 - NerdCommenter
@@ -44,7 +49,7 @@
 :FZF
 :Hist
 
-<Ctrl-ijkl>
+<Ctl-ijkl>
 <Ctrl-t>
 <Ctrl-x>
 <Ctrl-v>
@@ -69,6 +74,19 @@ yss<characted> e.g. yssb yss)
 - Do not use ijkl too much.
 - Do not use Backspace key.
 - Learn Vim first.  
+
+## Leverage Points 
+- Get used to adding new windows 
+- Get used to NOT using the mouse
+- Get used to finding files (In your current directory, in other directories)
+- Get used to copy and pasting stuff (in and out of your browser) 
+- Use tmux
+- Get used to adding and customising your vimrc
+- Get used to deleting in insert mode)
+
+## Things to do 
+- Make a good enough .vimrc to be used on someoneelses computer
+- Make a good enought vs code json file to be used on someonelses computer
 
 ## Useful Links 
 -[Neovim vs Vim](https://vi.stackexchange.com/questions/34/what-is-neovim-how-is-it-different-from-vim-and-why-should-i-care) 

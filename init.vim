@@ -80,6 +80,13 @@ vnoremap ˚  :m '<-2<CR>gv=gv
 " }}}
 "
 
+" Quickly insert an empty new line without entering insert mode
+    nnoremap <leader>o o<Esc>
+    nnoremap <leader>O O<Esc>
+
+" Delete all whitespace in up to front of line
+nnoremap <leader>z ma0d^`a
+
 " TABS AND INDENTS{{{
 set tabstop=2       " number of visual spaces per TAB
 set softtabstop=2   " number of spaces in tab when editing

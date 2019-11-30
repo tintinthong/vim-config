@@ -19,6 +19,9 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-system-copy'
+Plug 'tpope/vim-fugitive'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'ElmCast/elm-vim'
 call plug#end() 
 " }}}
@@ -37,23 +40,44 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>/ :noh<cr>
 
 "Resize Window
-nnoremap <C-w>+ :vertical resize +5<cr>
+"= emulates the + sign
+nnoremap <C-w>= :vertical resize +5<cr>
 nnoremap <C-w>- :vertical resize -5<cr>
 
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+
+" Go to next tab by direction
+" This follows vimium paradigm
+noremap <S-j> gT 
+noremap <S-k> gt 
+
+" Go to last active tab
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
 " Adding statusline in Filetype
 set statusline=%f\ -\ FileType:\ %y
 
-onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+"Moving lines up and down(Mac produces weird characters for Alt) 
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+vnoremap ∆  :m '>+1<CR>gv=gv
+vnoremap ˚  :m '<-2<CR>gv=gv
 
-"Manipulate blank lines while remaining in Normal mode
-nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 " shift h and l are already in newovim configurations
 " }}}
-"
 "
 
 " TABS AND INDENTS{{{
@@ -96,8 +120,8 @@ let g:fzf_action = {
 " - down / up / left / right
 let g:fzf_layout = { 'down': '~40%' }
 
-nnoremap <leader>p :FZF<cr>
-nnoremap <leader>h :Hist<cr>
+nnoremap <C-p> :FZF<cr>
+nnoremap <C-h> :Hist<cr>
 nnoremap <leader>f :Ag<cr> 
 
 "Easy Motion 
@@ -108,7 +132,7 @@ nnoremap <leader>f :Ag<cr>
 
 "Nerd Tree
 
-map <C-b> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 "Open NERDTree automatically
 autocmd VimEnter * NERDTree
@@ -119,4 +143,12 @@ autocmd VimEnter * wincmd p
 "Closes file when last window is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+"haskell-vim
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 " }}}

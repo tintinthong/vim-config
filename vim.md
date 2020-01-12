@@ -1,6 +1,21 @@
-# vim-config
+# Vim Shortcuts
+- Only includes useful shortcuts 
 
-## Vanilla Vim 
+## Coc 
+
+<tab> Autocomplete
+<C-p> in insert mode just list commands 
+[g 
+]g To navigate through diagnostics
+
+gd go to definition
+gy go to type
+gi go to implementation 
+gr go to references 
+
+
+## Vim 
+- <C-o> Goes back to previous position of cursor
 
 - <C-h> In insert mode, use to remove last character.
 - <C-w> In insert mode, use to remove last word.
@@ -11,7 +26,7 @@
 - dis Delete an inner sentence 
 
 - ; Move to next f
-- , Move to previous f
+- , Move to previous f (Leader key is ,)
 - F Search backwards
 
 - dab Delete ()
@@ -24,21 +39,11 @@
 - ge Moves E but backwards
 - gi Puts insert mode at last place in insert mode
 
-- <Shift-j> Bring lower line up (make inline)
-- <Shift-k> Bring upper line up (make inline)
-
 - :noh Remove last search highlighting
 
-## What you must learn?
-[] Using regex with search 
-[] Automatic opening of windows
-[] Using terminals
+- < In visual mode, this is indent
 
-## Plugin Vim
-
-- NerdCommenter
-
-<Shift>++
+## Plugins 
 
 - Easy Motion 
 
@@ -49,7 +54,7 @@
 :FZF
 :Hist
 
-<Ctl-ijkl>
+<Ctrl-ijkl>
 <Ctrl-t>
 <Ctrl-x>
 <Ctrl-v>
@@ -60,35 +65,13 @@ cs<character><character> e.g. cs"'
 ysiw<character> e.g. ysiw]
 yss<characted> e.g. yssb yss)
 
-## Some Vim Concepts
-
-
-## Advanced Tips
-- Never move your right hand away from ijkl. 
-- Never context switch (1 reference 1 control).
-- Use c not d.
-- Learn to search and replace.
-- Separate Mac controls with Vim controls.
-- Use VS Code for syntax highlighting.
-- Persist in Normal Mode.
-- Do not use ijkl too much.
-- Do not use Backspace key.
-- Learn Vim first.  
-
-## Leverage Points 
-- Get used to adding new windows 
-- Get used to NOT using the mouse
-- Get used to finding files (In your current directory, in other directories)
-- Get used to copy and pasting stuff (in and out of your browser) 
-- Use tmux
-- Get used to adding and customising your vimrc
-- Get used to deleting in insert mode)
-
 ## Things to do 
-- Make a good enough .vimrc to be used on someoneelses computer
-- Make a good enought vs code json file to be used on someonelses computer
+- Add jump to correct place when dealing with functions h
+- Hide or unhide help bar 
+- Document how to import all these settings to another computer
 
 ## Useful Links 
 -[Neovim vs Vim](https://vi.stackexchange.com/questions/34/what-is-neovim-how-is-it-different-from-vim-and-why-should-i-care) 
 - [Useful Tips in Vim](https://www.barbarianmeetscoding.com/blog/2019/02/08/boost-your-coding-fu-with-vscode-and-vim) 
 - [Neovim Skip Comment](https://vi.stackexchange.com/questions/19663/neovim-single-line-comments-also-format-the-next-line)
+- [Commands I wish I knew] (https://stackoverflow.com/questions/1276403/simple-vim-commands-you-wish-youd-known-earlier/1278813)
